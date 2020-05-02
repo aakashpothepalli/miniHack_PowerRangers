@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class Trainer extends StatefulWidget {
-  Trainer({Key key}) : super(key: key);
+  
 
   @override
   _TrainerState createState() => _TrainerState();
