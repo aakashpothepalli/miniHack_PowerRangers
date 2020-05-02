@@ -51,7 +51,9 @@ class _SignupState extends State<Signup> {
                 width: 300,
                 height: 45,
                 child: RaisedButton(
-                  onPressed: () {},
+                  onPressed: () {
+        Navigator.push(context, MaterialPageRoute(builder: (context) => Dashboard()));
+                  },
                   child: Text('SIGN UP'),
                   textColor: Colors.white,
                   shape: RoundedRectangleBorder(
