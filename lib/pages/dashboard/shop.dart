@@ -9,7 +9,20 @@ class Shop extends StatefulWidget {
 }
 
 class _ShopState extends State<Shop> {
-  List _listItem = new List();
+  final List<String> _listItem = [
+    'assets/images/Aspargus.jpeg',
+    'assets/images/Avacado.jpeg',
+    'assets/images/Bitter Gourd.jpeg',
+    'assets/images/buleberry.jpeg',
+    'assets/images/broccoli.jpeg',
+    'assets/images/Cap.jpeg',
+    'assets/images/Gym Gloves.jpeg',
+    'assets/images/rasberry.jpeg',
+    'assets/images/socks.jpeg',
+    'assets/images/Tank Top.jpeg',
+    'assets/images/Zucchini.jpeg',
+
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +34,7 @@ class _ShopState extends State<Shop> {
         title: Text("Home"),
         actions: <Widget>[
           Padding(
-            padding: EdgeInsets.all(10.0),
+            padding: EdgeInsets.all(10),
             child: Container(
               width: 36,
               height: 30,
@@ -38,20 +51,21 @@ class _ShopState extends State<Shop> {
         child: Container(
           padding: EdgeInsets.all(20.0),
           child: Column(
+           // mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Container(
                 width: double.infinity,
-                height: 250,
+                height: 200,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     image: DecorationImage(
-                        image: AssetImage('assets/images/one.jpg'),
+                        image: AssetImage('assets/images/blueberry.jpeg'),
                         fit: BoxFit.cover
                     )
                 ),
                 child: Container(
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(10),
                       gradient: LinearGradient(
                           begin: Alignment.bottomRight,
                           colors: [
@@ -61,7 +75,7 @@ class _ShopState extends State<Shop> {
                       )
                   ),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
                       Text("Lifestyle Sale", style: TextStyle(color: Colors.white, fontSize: 35, fontWeight: FontWeight.bold),),
                       SizedBox(height: 30,),
