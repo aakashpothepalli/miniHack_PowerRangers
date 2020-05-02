@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:msrit_power_rangers/pages/login.dart';
 import 'package:msrit_power_rangers/pages/signup.dart';
 
 void main() => runApp(MyApp());
@@ -71,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Signup(),
+        child: Login(),
       )
        
     );

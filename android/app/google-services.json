@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "524818003655",
+    "firebase_url": "https://powerrangers-fitness.firebaseio.com",
+    "project_id": "powerrangers-fitness",
+    "storage_bucket": "powerrangers-fitness.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524818003655:android:cc90c95853eecd4f55f0e2",
+        "android_client_info": {
+          "package_name": "com.example.msrit_power_rangers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524818003655-gl0egl3gi4i9kohrqgd3es0lr1kvc00h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.msrit_power_rangers",
+            "certificate_hash": "3bf62f2a590f546c5e9a13f4becf396747bdab21"
+          }
+        },
+        {
+          "client_id": "524818003655-p29v97qfdimr1707bn3kjca9frl290t3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNMrXkz2XGDj0GjNnmqapt3HzcfOo5Qc8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524818003655-p29v97qfdimr1707bn3kjca9frl290t3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
