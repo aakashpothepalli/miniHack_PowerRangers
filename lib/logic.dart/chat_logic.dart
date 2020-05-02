@@ -14,8 +14,20 @@ class ChatLogic{
     }
   }
 
+  _createUserIfNotPresent(FirebaseUser user)async {
+        DocumentSnapshot userSnap = await Firestore.instance.collection('users').document(user.uid).get();
+        if(!userSnap.exists || userSnap==null){
+          await Firestore.instance.collection('users').document(user.uid)
+          .setData({
+            'name':user.displayName,
+            'uid':user.uid
+          });
+        }
+  }
   createChats()async {
+    
     FirebaseUser user = await _getUser();
+    await _createUserIfNotPresent(user);
     QuerySnapshot chatsSnaps = await Firestore.instance.collection('users').getDocuments();
     var docs = chatsSnaps.documents;
 

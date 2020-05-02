@@ -52,6 +52,7 @@ class _LoginState extends State<Login> {
       final FirebaseUser user = authResult.user;
 
       print('signed in as ' + user.displayName);
+      
       await ChatLogic().createChats();
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Signup()));
      
