@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:msrit_power_rangers/pages/dashboard/users.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -13,6 +14,85 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   final GoogleSignIn googleSignIn = new GoogleSignIn(scopes: ['email']);
+   double waterCount=0;
+   double calorieCount=0;
+@override
+void initState() { 
+  super.initState();
+  User().getWaterCount().then((count){
+    setState(() {
+      waterCount = count;
+    });
+  });
+  User().getCalorieCount().then((count){
+    setState(() {
+      calorieCount =count;
+    });
+  });
+}
+
+Widget getListView() {
+  var listView =ListView(
+    children: <Widget>[
+      Card(
+      child: Container(
+       padding:EdgeInsets.all(25) ,
+       child: ListTile(
+        leading: Icon(Icons.favorite ,size :30,color:Colors.red),
+        title: Text('Calories : $calorieCount'),
+        subtitle: Text("Calories Consumed for the Day")
+      ),
+       ),
+      ),
+      Card(
+        child:Column(
+          children: <Widget>[
+           ListTile(
+           contentPadding: EdgeInsets.fromLTRB(35, 25, 15, 15),
+           leading: Icon(Icons.invert_colors,size: 30,color:Colors.blue),
+           title: Text('Water '),
+           trailing: IconButton (
+             icon:Icon(Icons.add_circle),
+             color:Colors.blue,
+             onPressed: (){
+               setState(() {
+                 if(waterCount>100)
+                  waterCount =100.0;
+                  else
+                 waterCount = waterCount + 0.08;
+               });
+               User().setWaterCount(waterCount);
+             }
+             ),
+        
+        ),
+         Container(
+           padding: EdgeInsets.all(25),
+           child:LinearPercentIndicator(
+                width: 140.0,
+                lineHeight: 14.0,
+                percent: waterCount,
+                backgroundColor: Colors.grey,
+                progressColor: Colors.blue,
+                center: Text(
+                  "$waterCount",
+                  style: new TextStyle(fontSize: 12.0),
+              ),
+            )
+         ),
+          ],
+  
+       )
+      )
+
+
+    
+    ]
+  );
+
+      return listView;
+      
+}
 
 
   @override
@@ -37,71 +117,4 @@ class _HomeState extends State<Home> {
 }
 
  double water=0.0; // temporary declaration ,each time user presses icon button(200 ml water not 250) ,water % should increase by 8%
- Widget getListView() {
-  var listView =ListView(
-    children: <Widget>[
-      Card(
-      child: Container(
-       padding:EdgeInsets.all(25) ,
-       child: ListTile(
-        leading: Icon(Icons.favorite ,size :30,color:Colors.red),
-        title: Text('Calories :'),
-        subtitle: Text("Calories Consumed for the Day")
-      ),
-       ),
-      ),
-      Card(
-        child:Column(
-          children: <Widget>[
-          const ListTile(
-           contentPadding: EdgeInsets.fromLTRB(35, 25, 15, 15),
-           leading: Icon(Icons.invert_colors,size: 30,color:Colors.blue),
-           title: Text('Water '),
-           //trailing: IconButton (Icons.add_circle,size:40,color:Colors.blue,),
-        
-        ),
-         Container(
-           padding: EdgeInsets.all(25),
-           child:LinearPercentIndicator(
-                width: 140.0,
-                lineHeight: 14.0,
-                percent: 0.5,
-                backgroundColor: Colors.grey,
-                progressColor: Colors.blue,
-                center: Text(
-                  "$water",
-                  style: new TextStyle(fontSize: 12.0),
-              ),
-)
-         ),
-          ],
-  
-        /* IconButton(
-            icon: Icon(Icons.volume_down),
-
-            onPressed: () {
-              setState(() {
-                water+=8.0;
-              
-              });
-            }
-          ),*/
-
-            
-       )
-      )
-
-
-    
-    ]
-  );
-
-      return listView;
-      
-}
-
-
-
-
-
-
+ 
