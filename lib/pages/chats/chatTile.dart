@@ -28,7 +28,7 @@ class _ChatTileState extends State<ChatTile> {
           roomId: widget.roomId,
         ) ));
       },
-      trailing: CircleAvatar(radius: 13, child : Text((widget.messageCount?? 0).toString()) )
+      // trailing: CircleAvatar(radius: 13, child : Text((widget.messageCount?? 0).toString()) )
     );
   }
 }

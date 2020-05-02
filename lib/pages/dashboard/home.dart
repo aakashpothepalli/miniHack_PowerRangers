@@ -17,6 +17,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(actions: <Widget>[
+
         IconButton(
           icon: Icon(Icons.exit_to_app),
           onPressed: (){
@@ -24,10 +25,10 @@ class _HomeState extends State<Home> {
             googleSignIn.signOut();
             Navigator.pushReplacement(context, new MaterialPageRoute(builder: (context)=>Login()));
           },
-        )
+        ),
+        
       ],title: Text('Home'),)
-      ,
-            body: Center(child: Text('home')),
+      ,body: Center(child: Text('home')),
 
     );
   }
