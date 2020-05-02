@@ -9,9 +9,6 @@ class Dashboard extends StatefulWidget {
   @override
   _DashboardState createState() => _DashboardState();
 
-
-
-
 }
 
 class _DashboardState extends State<Dashboard> {
@@ -39,7 +36,7 @@ class _DashboardState extends State<Dashboard> {
           
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_box),
+            icon: Icon(Icons.accessibility),
             title:Text('Tainer'),
             backgroundColor:Colors.blue
           
