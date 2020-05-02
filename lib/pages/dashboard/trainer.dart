@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:msrit_power_rangers/pages/chats/chatsPage.dart';
 
 class Trainer extends StatefulWidget {
   
@@ -10,8 +11,6 @@ class Trainer extends StatefulWidget {
 class _TrainerState extends State<Trainer> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-            body: Center(child: Text('trainer')),
-    );
+    return ChatsPage();
   }
 }
