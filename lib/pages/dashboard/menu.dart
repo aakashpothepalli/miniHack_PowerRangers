@@ -23,6 +23,7 @@ class _MenuState extends State<Menu> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Menu'),
+        backgroundColor: Colors.red,
       ), 
       body: ListView(
         children: <Widget> [
