@@ -4,6 +4,7 @@ import 'package:msrit_power_rangers/pages/dashboard/shop.dart';
 import 'package:msrit_power_rangers/pages/dashboard/trainer.dart';
 import 'package:msrit_power_rangers/pages/dashboard/home.dart';
 import 'package:msrit_power_rangers/pages/dashboard/meal_plan.dart';
+import 'package:msrit_power_rangers/pages/easteregg.dart';
 
 
  int counter = 0;
@@ -58,9 +59,13 @@ class _DashboardState extends State<Dashboard> {
           BottomNavigationBarItem(
             icon: IconButton(icon: Icon(Icons.accessibility),
           //  alignment: Alignment.bottomCenter,
+<<<<<<< HEAD
+          ),
+=======
             onPressed: () {
 
             },),
+>>>>>>> fca74e1e2cd89df73cecc78634a1bb0e2f87a1d4
             title:Text('Tainer'),
             backgroundColor:Colors.blue
           ),
@@ -68,7 +73,8 @@ class _DashboardState extends State<Dashboard> {
           BottomNavigationBarItem(
             icon: IconButton(icon : Icon(Icons.add_shopping_cart),
            // alignment:Alignment.bottomCenter,
-            onPressed: () {}),
+            // onPressed: () {}
+            ),
             title:Text('Shop'),
             backgroundColor:Colors.blue
           
@@ -76,7 +82,8 @@ class _DashboardState extends State<Dashboard> {
           BottomNavigationBarItem(
             icon: IconButton(icon: Icon(Icons.group),
            // alignment: Alignment.bottomCenter,
-            onPressed: () {}),
+            // onPressed: () {}
+            ),
             title:Text('LeaderBoard'),
             backgroundColor:Colors.blue
           

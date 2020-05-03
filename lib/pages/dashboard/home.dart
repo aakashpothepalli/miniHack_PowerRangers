@@ -7,6 +7,7 @@ import 'package:msrit_power_rangers/pages/dashboard/menu.dart';
 import 'package:msrit_power_rangers/pages/dashboard/meal_plan.dart';
 import 'package:provider/provider.dart';
 import 'package:gradient_text/gradient_text.dart';
+import 'package:confetti/confetti.dart';
 
 import '../login.dart';
 class Home extends StatefulWidget {
@@ -20,9 +21,13 @@ class _HomeState extends State<Home> {
   final GoogleSignIn googleSignIn = new GoogleSignIn(scopes: ['email']);
    double waterCount=0;
    double calorieCount=0;
+     ConfettiController _controllerCenter;
+
 @override
 void initState() { 
   super.initState();
+   _controllerCenter =
+        ConfettiController(duration: const Duration(seconds: 5));
 }
 
 init(){
@@ -39,6 +44,9 @@ init(){
   //     calorieCount =count;
   //   });
   // });
+}
+playGrap(){
+  _controllerCenter.play();
 }
 
 Widget getListView() {
@@ -83,12 +91,13 @@ Widget getListView() {
              color:Colors.blue,
              onPressed: (){
                setState(() {
-                 if(waterCount>100)
-                  waterCount =100.0;
+                 if(waterCount>1)
+                  {
+                    waterCount =1.0;}
                   else
                  waterCount = waterCount + 0.08;
                });
-               User().setWaterCount(waterCount);
+               User().setWaterCount(waterCount,controller:_controllerCenter);
              }
              ),
         
@@ -106,7 +115,7 @@ Widget getListView() {
              animationDuration: 1000,
                 width: 140.0,
                 lineHeight: 20.0,
-                percent: waterCount,
+                percent: waterCount>1?1:waterCount,
                 backgroundColor: Colors.grey,
                 progressColor: Colors.blue,
                 center: Text(
@@ -203,9 +212,31 @@ Widget getListView() {
   @override
   Widget build(BuildContext context) {
      init();
-
     return Scaffold(
-      body: Center(child: getListView()),
+
+      body: Stack(
+        children: <Widget>[        
+            Center(child: getListView()),
+
+          Align(
+          alignment: Alignment.center,
+          child: ConfettiWidget(
+            confettiController: _controllerCenter,
+            blastDirectionality: BlastDirectionality
+                .explosive, // don't specify a direction, blast randomly
+            shouldLoop:
+                true, // start again as soon as the animation is finished
+            colors: const [
+              Colors.green,
+              Colors.blue,
+              Colors.pink,
+              Colors.orange,
+              Colors.purple
+            ], // manually specify the colors to be used
+          ),
+        ),
+        ],
+      ),
       appBar: AppBar(actions: <Widget>[
 
         IconButton(

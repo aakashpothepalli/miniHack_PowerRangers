@@ -29,14 +29,24 @@ class _ChatTileState extends State<ChatTile> {
       subtitle: Text(widget.recentMessage ?? "How are you doing ?"),
       onTap: (){
         if(widget.type==1)
+        {
           ChatLogic().sendRatingCardToTrainer(foodItemName: widget.mealName,calories: widget.calories,roomId: widget.roomId,imgurl: widget.imgurl);
           
+        Navigator.pushReplacement(context, new MaterialPageRoute(builder: (context)=>ChatPage(
+          
+          myUid: widget.myUid,
+          profileName: widget.profileName,
+          roomId: widget.roomId,
+        ) ));
+      }
+      else{
         Navigator.push(context, new MaterialPageRoute(builder: (context)=>ChatPage(
           
           myUid: widget.myUid,
           profileName: widget.profileName,
           roomId: widget.roomId,
         ) ));
+      }
       },
       // trailing: CircleAvatar(radius: 13, child : Text((widget.messageCount?? 0).toString()) )
     );
