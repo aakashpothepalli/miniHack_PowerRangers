@@ -26,7 +26,7 @@ class _ChatTileState extends State<ChatTile> {
       subtitle: Text(widget.recentMessage ?? "How are you doing ?"),
       onTap: (){
         if(widget.type==1)
-        ChatLogic().sendRatingCardToTrainer(foodItemName: widget.foodItemName,roomId: widget.roomId);
+          ChatLogic().sendRatingCardToTrainer(foodItemName: widget.foodItemName,roomId: widget.roomId);
 
         Navigator.push(context, new MaterialPageRoute(builder: (context)=>ChatPage(
           myUid: widget.myUid,

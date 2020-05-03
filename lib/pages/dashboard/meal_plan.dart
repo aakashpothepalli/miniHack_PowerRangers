@@ -26,13 +26,13 @@ void _incrementCounter(){
           child: CheckboxListTile(
             title: Text('North Indian Cuisine',style:TextStyle(fontWeight:FontWeight.bold),),
              value: checkBoxValue,
-                   onChanged:(bool value) {
-                    setState(() {
-                       checkBoxValue=value;
-                          }); 
-                           },
-                     ),
-
+              onChanged:(bool value) {
+              setState(() {
+                  checkBoxValue=!value;
+                    }); 
+                      },
+                ),
+  
            ),
         Card(
           child: CheckboxListTile(
@@ -40,10 +40,10 @@ void _incrementCounter(){
              value: checkBoxValue,
                    onChanged:(bool value) {
                     setState(() {
-                       checkBoxValue=value;
-                          }); 
-                           },
-                     ),
+                       checkBoxValue=!value;
+                    }); 
+                  },
+             ),
 
            ),
 

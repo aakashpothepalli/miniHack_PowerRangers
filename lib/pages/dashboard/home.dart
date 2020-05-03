@@ -5,7 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:msrit_power_rangers/pages/dashboard/menu.dart';
 import 'package:msrit_power_rangers/pages/dashboard/meal_plan.dart';
-
+import 'package:provider/provider.dart';
 import '../login.dart';
 class Home extends StatefulWidget {
 
@@ -21,16 +21,22 @@ class _HomeState extends State<Home> {
 @override
 void initState() { 
   super.initState();
-  User().getWaterCount().then((count){
+}
+
+init(){
+ Provider.of<User>(context).getWaterCount().then((count){
     setState(() {
       waterCount = count;
     });
   });
-  User().getCalorieCount().then((count){
-    setState(() {
-      calorieCount =count;
-    });
+  setState(() {
+    calorieCount= Provider.of<User>(context).calorieCount;
   });
+  // Provider.of<User>(context).getCalorieCount().then((count){
+  //   setState(() {
+  //     calorieCount =count;
+  //   });
+  // });
 }
 
 Widget getListView() {
@@ -136,6 +142,8 @@ Widget getListView() {
 
   @override
   Widget build(BuildContext context) {
+     init();
+
     return Scaffold(
       body: Center(child: getListView()),
       appBar: AppBar(actions: <Widget>[

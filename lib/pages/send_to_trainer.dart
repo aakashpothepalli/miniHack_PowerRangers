@@ -56,6 +56,7 @@ class _SendToTrainerState extends State<SendToTrainer> {
 
                   chats.add(
                     ChatTile(
+                      type: 1,
                       messageCount: 0,
                       myUid: this.user.uid,
                       profileName: profileName,

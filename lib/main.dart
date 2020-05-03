@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:msrit_power_rangers/pages/dashboard/users.dart';
 import 'package:msrit_power_rangers/pages/login.dart';
 import 'package:msrit_power_rangers/pages/signup.dart';
-
-void main() => runApp(MyApp());
+import 'package:provider/provider.dart';
+void main() => runApp(
+  ChangeNotifierProvider(
+    create: (context)=>User(),
+    child: MyApp(),
+  ));
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -25,7 +30,8 @@ class MyApp extends StatelessWidget {
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
-        accentColor: Colors.blueAccent
+
+        accentColor: Colors.blueAccent,
       ),
 
       home: MyHomePage(title: 'Flutter Demo Home Page'),
@@ -54,6 +60,12 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
+  @override
+  void initState() {
+    // TODO: implement initState
+    Provider.of<User>(context,listen: false);
+    super.initState();
+  }
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -73,6 +85,8 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
+          Provider.of<User>(context).init();
+
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),

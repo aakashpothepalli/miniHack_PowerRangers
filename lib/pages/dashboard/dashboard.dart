@@ -33,17 +33,17 @@ class _DashboardState extends State<Dashboard> {
             icon: Icon(Icons.home),
             title:Text('Home'),
             backgroundColor:Colors.blue
-          
           ),
+          
           BottomNavigationBarItem(
             icon: Icon(Icons.accessibility),
             title:Text('Tainer'),
             backgroundColor:Colors.blue
-          
           ),
+
           BottomNavigationBarItem(
             icon: Icon(Icons.add_shopping_cart),
-            title:Text('Cart'),
+            title:Text('Shop'),
             backgroundColor:Colors.blue
           
           ),
