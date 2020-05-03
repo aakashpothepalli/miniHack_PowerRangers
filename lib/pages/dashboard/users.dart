@@ -23,15 +23,19 @@ class User extends ChangeNotifier {
       setWaterCount(0.0);
     } 
     else{
-      if(count>1)count=1;
+      if(count>1){
+        count=1;}
+
       waterCount = count;
     }
     return waterCount;
   }
 
-  setWaterCount(value)async{
-    if(value>1)
-    value = 1.0;
+  setWaterCount(value,{var controller})async{
+    if(value>1){
+              controller.play();
+
+    value = 1.0;}
     var prefs = await SharedPreferences.getInstance();
     await prefs.setDouble('waterCount',value );
   }

@@ -26,7 +26,11 @@ class MyApp extends StatelessWidget {
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
         primarySwatch: Colors.blue,
-        
+        appBarTheme: AppBarTheme(
+          color: Colors.white,
+          actionsIconTheme: IconThemeData(color: Colors.black),
+          textTheme: TextTheme(
+            title: TextStyle(color: Colors.black,fontSize: 18)))
       ),
       darkTheme: ThemeData(
         brightness: Brightness.dark,

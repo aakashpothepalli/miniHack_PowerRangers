@@ -76,6 +76,8 @@ var brightness = MediaQuery.of(context).platformBrightness;
        alignment: WrapAlignment.end,
        children: <Widget>[
          Card(
+                     margin: EdgeInsets.all(10),
+
           color:isdark?Colors.deepPurple:Colors.blue,
           child: Padding(
             padding: EdgeInsets.all(10),
@@ -96,6 +98,8 @@ var brightness = MediaQuery.of(context).platformBrightness;
        alignment: WrapAlignment.start,
        children: <Widget>[
          Card(
+                     margin: EdgeInsets.all(10),
+
           color:isdark?Colors.black54: Colors.white,
           child: Padding(
             padding: EdgeInsets.all(10),
