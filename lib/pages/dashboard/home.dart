@@ -161,7 +161,7 @@ Widget getListView() {
            child: ButtonBar(
             children: <Widget>[
               FlatButton(
-                child: const Text('Menu'),
+                child: const Text('Menu',style: TextStyle(color: Colors.white),),
                 onPressed: () { 
                   Navigator.push(
               context,
@@ -170,7 +170,7 @@ Widget getListView() {
           },
               ),
                FlatButton(
-                child: const Text('Meal Plan'),
+                child: const Text('Meal Plan',style: TextStyle(color: Colors.white)),
                 onPressed: () { 
                   Navigator.push(
               context,
