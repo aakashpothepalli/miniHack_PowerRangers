@@ -3,6 +3,8 @@ import 'package:msrit_power_rangers/pages/dashboard/users.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:msrit_power_rangers/pages/dashboard/menu.dart';
+import 'package:msrit_power_rangers/pages/dashboard/meal_plan.dart';
 
 import '../login.dart';
 class Home extends StatefulWidget {
@@ -83,7 +85,44 @@ Widget getListView() {
           ],
   
        )
-      )
+      ),
+      Card(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          const ListTile(
+            leading: Icon(Icons.album),
+            contentPadding: EdgeInsets.fromLTRB(35,10 , 0, 0),
+            title: Text('Plan your Diet'),
+            subtitle: Text('Choose your Menu for the day'),
+          ),
+          ButtonBar(
+            children: <Widget>[
+              FlatButton(
+                child: const Text('Menu'),
+                onPressed: () { 
+                  Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Menu()),
+            );
+          },
+              ),
+               FlatButton(
+                child: const Text('Meal Plan'),
+                onPressed: () { 
+                  Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => MealPlan()),
+            );
+          },
+              ),
+
+            ],
+          ),
+        ],
+      ),
+    ),
+      
 
 
     
