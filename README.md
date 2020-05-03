@@ -7,3 +7,9 @@ ppt link -
 video link -
 <br/>
 apk link- https://drive.google.com/file/d/1nGMPMewIfhleNenoYkFOFzA0zq_KoweK/view?usp=sharing
+<br/>
+Challenges
+<br/>
+1)Dark mode XD
+<br/>
+2)Easter Egg
