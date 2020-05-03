@@ -16,6 +16,7 @@ class _MenuState extends State<Menu> {
  Widget build(BuildContext context) {
 
   _increaseCalorieCount(double count,String mealName,String imgurl){
+    
     key.currentState.showSnackBar(SnackBar(content: Text("$count Calories Consumed"),));
     Navigator.push(context, new MaterialPageRoute(builder: (context)=>SendToTrainer(mealName: mealName,calories: count,imgurl:imgurl)));
     Provider.of<User>(context,listen: false).increaseCalorieCount(count);

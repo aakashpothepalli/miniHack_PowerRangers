@@ -11,6 +11,10 @@ import 'package:msrit_power_rangers/pages/easteregg.dart';
 
 class Dashboard extends StatefulWidget {
 
+  int gender;
+  String name;
+  int age;
+  Dashboard({this.name,this.age,this.gender});
   @override
   _DashboardState createState() => _DashboardState();
 
@@ -18,17 +22,18 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> {
 
-  
 
-  final List<Widget> _children= [
-      Home(),
+  int _currentIndex=0;
+  @override
+  Widget build(BuildContext context) {
+
+     final List<Widget> _children= [
+      Home(gender: widget.gender,age: widget.age,name: widget.name,),
       Trainer(),
       Shop(),
       Leaderboard(),
     ];
-  int _currentIndex=0;
-  @override
-  Widget build(BuildContext context) {
+    
     return Scaffold(
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -59,9 +64,7 @@ class _DashboardState extends State<Dashboard> {
           BottomNavigationBarItem(
             icon: IconButton(icon: Icon(Icons.accessibility),
           //  alignment: Alignment.bottomCenter,
-            onPressed: () {
-
-            },),
+          ),
             title:Text('Tainer'),
             backgroundColor:Colors.blue
           ),
