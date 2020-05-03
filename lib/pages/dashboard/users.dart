@@ -38,12 +38,12 @@ class User {
     double count = prefs.getDouble('calorieCount');
     if(count==null){
       waterCount =0.0;
-      setWaterCount(0.0);
+      setCalorieCount(0.0);
     } 
     else{
-      waterCount = count;
+      calorieCount = count;
     }
-    return waterCount;
+    return calorieCount;
   }
 
   setCalorieCount(value)async{

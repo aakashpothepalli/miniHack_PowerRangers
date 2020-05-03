@@ -50,4 +50,10 @@ class ChatLogic{
     return await FirebaseAuth.instance.currentUser();
   }
 
+  sendRatingCardToTrainer({String foodItemName,String roomId}){
+    Firestore.instance.collection('chats').document(roomId).collection('messages').add({
+      //todo add item card
+    });
+  }
+
 }
