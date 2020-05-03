@@ -59,13 +59,9 @@ class _DashboardState extends State<Dashboard> {
           BottomNavigationBarItem(
             icon: IconButton(icon: Icon(Icons.accessibility),
           //  alignment: Alignment.bottomCenter,
-<<<<<<< HEAD
-          ),
-=======
             onPressed: () {
 
             },),
->>>>>>> fca74e1e2cd89df73cecc78634a1bb0e2f87a1d4
             title:Text('Tainer'),
             backgroundColor:Colors.blue
           ),

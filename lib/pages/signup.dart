@@ -20,7 +20,7 @@ class _SignupState extends State<Signup> {
           children: <Widget>[
             Text(
               'Sign Up',
-              style: TextStyle(fontSize: 20),
+              style: TextStyle(fontStyle : FontStyle.italic, fontSize: 20),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -58,7 +58,7 @@ class _SignupState extends State<Signup> {
                   textColor: Colors.white,
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30)),
-                  color: Colors.grey[800],
+                  color: Colors.red,
                 )),
             Text('or sign up with social Account'),
             Row(

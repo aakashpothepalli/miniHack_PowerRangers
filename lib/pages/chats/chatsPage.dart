@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:gradient_text/gradient_text.dart';
 
 import 'chatTile.dart';
 
@@ -70,7 +71,13 @@ class ChatsPageState  extends State<ChatsPage>{
             }
             
             return Scaffold(
-              appBar: AppBar(title: Text('Talk to Trainers'),),
+              appBar: AppBar(
+                centerTitle: true,
+                title: GradientText("Talk to Trainers",
+           gradient:LinearGradient(colors:[ Colors.deepPurple,Colors.deepOrange,Colors.pink]),
+            style:TextStyle(fontFamily:"Libre Baskerville",fontSize:20)),
+                
+              ),
 
               body: ListView(
                 children: chats,
