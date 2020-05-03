@@ -25,6 +25,7 @@ class _MenuState extends State<Menu> {
       key: key,
       appBar: AppBar(
         title: Text('Menu'),
+        backgroundColor: Colors.red,
       ), 
       body: ListView(
         children: <Widget> [
