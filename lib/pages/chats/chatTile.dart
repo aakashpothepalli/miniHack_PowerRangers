@@ -5,14 +5,17 @@ import 'chatPage.dart';
 class ChatTile extends StatefulWidget {
   String profilePic;
   String profileName;
+  String mealName;
+  double calories;
   int type;
   String recentMessage;
   int messageCount;
   String profileUid;
   String roomId;
   String myUid;
+  String imgurl;
   String foodItemName;
-  ChatTile({this.profileName,this.messageCount,this.profilePic,this.type,this.recentMessage,this.profileUid,this.myUid,this.roomId,this.foodItemName});
+  ChatTile({this.profileName,this.messageCount,this.imgurl,this.profilePic,this.type,this.mealName,this.calories,this.recentMessage,this.profileUid,this.myUid,this.roomId,this.foodItemName});
   @override
   _ChatTileState createState() => _ChatTileState();
 }
@@ -26,9 +29,10 @@ class _ChatTileState extends State<ChatTile> {
       subtitle: Text(widget.recentMessage ?? "How are you doing ?"),
       onTap: (){
         if(widget.type==1)
-          ChatLogic().sendRatingCardToTrainer(foodItemName: widget.foodItemName,roomId: widget.roomId);
-
+          ChatLogic().sendRatingCardToTrainer(foodItemName: widget.mealName,calories: widget.calories,roomId: widget.roomId,imgurl: widget.imgurl);
+          
         Navigator.push(context, new MaterialPageRoute(builder: (context)=>ChatPage(
+          
           myUid: widget.myUid,
           profileName: widget.profileName,
           roomId: widget.roomId,
