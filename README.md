@@ -2,7 +2,7 @@
 
 ## fitness
 
-ppt link - 
+ppt link - https://docs.google.com/presentation/d/1kE3Jwa3l-UqrBOUDrSCNkWYDLqXAW-LDM1HnwfvIutk/edit?usp=sharing
 <br/>
 video link -https://drive.google.com/drive/folders/1UP_HDq-G5uGZLdQFcbTx8fYlGs7QnwFz?usp=sharing
 <br/>
