@@ -17,7 +17,7 @@ class _MenuState extends State<Menu> {
  Widget build(BuildContext context) {
 
   _increaseCalorieCount(double count){
-    Provider.of<User>(context).increaseCalorieCount(count);
+    Provider.of<User>(context,listen: false).increaseCalorieCount(count);
   }
 
     return Scaffold(
@@ -63,6 +63,8 @@ class _MenuState extends State<Menu> {
                 //  color:Colors.blue,
                  onPressed: (){
                    //Increases users' calorie count
+                                       _increaseCalorieCount(163);
+
                  }
                 ),
                 ),
@@ -82,6 +84,8 @@ class _MenuState extends State<Menu> {
                 //  color:Colors.blue,
                  onPressed: (){
                    //Increases users' calorie count
+                    _increaseCalorieCount(420);
+
                  }
                 ),
                 ),
@@ -100,6 +104,8 @@ class _MenuState extends State<Menu> {
                  tooltip: "check with trainer",
                 //  color:Colors.blue,
                  onPressed: (){
+                  _increaseCalorieCount(171);
+
                    //Increases users' calorie count
                  }
                 ),
@@ -120,6 +126,8 @@ class _MenuState extends State<Menu> {
                 //  color:Colors.blue,
                  onPressed: (){
                    //Increases users' calorie count
+                                       _increaseCalorieCount(202);
+
                  }
                 ),
                 ),
@@ -139,6 +147,8 @@ class _MenuState extends State<Menu> {
                 //  color:Colors.blue,
                  onPressed: (){
                    //Increases users' calorie count
+                                       _increaseCalorieCount(196);
+
                  }
                 ),
                 ),
