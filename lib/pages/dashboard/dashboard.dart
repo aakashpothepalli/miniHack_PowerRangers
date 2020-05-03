@@ -40,7 +40,7 @@ class _DashboardState extends State<Dashboard> {
                 _counter ++ ;
                 if(_counter==5)
                 {
-                   Navigator.push(context, MaterialPageRoute(builder: (context) => MealPlan()), );
+                   Navigator.push(context, MaterialPageRoute(builder: (context) => EasterBunny(),) );
                    _counter=0;
                   
                 }
@@ -89,4 +89,30 @@ class _DashboardState extends State<Dashboard> {
     );
   
   }
+}
+
+class EasterBunny extends StatelessWidget{
+  @override
+  Widget build(BuildContext context)
+  {
+    return Scaffold(
+
+      appBar: AppBar(backgroundColor: Colors.pink,
+         title: Text('Easter Bunny!!'),
+         centerTitle: true,),
+         body: Center(
+           child:Container(
+             decoration: new BoxDecoration(
+               image: DecorationImage(
+                 image: new AssetImage(''),
+                 fit:BoxFit.fill),
+
+             
+             shape: BoxShape.circle,
+             ),
+             ) ,)
+    );
+  }
+
+
 }
