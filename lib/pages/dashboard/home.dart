@@ -57,7 +57,7 @@ Widget getListView() {
         title: GradientText("Calories : $calorieCount",
            gradient:LinearGradient(colors:[ Colors.deepPurple,Colors.deepOrange,Colors.pink]),
             style:TextStyle(fontSize:20)),
-        subtitle: Text("Calories Consumed for the Day")
+        subtitle: Text("Calories Consumed for the Day",style:TextStyle(color:Colors.black))
       ),
        ),
       ),
@@ -68,7 +68,7 @@ Widget getListView() {
             
              decoration: new BoxDecoration(
                borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(10)),
-              gradient:LinearGradient(colors: [Colors.white,Colors.pink[50],Colors.blue[200]])
+              gradient:LinearGradient(colors: [Colors.yellow,Colors.green[200],Colors.blue[300]])
            ),
            child:ListTile(
            contentPadding: EdgeInsets.fromLTRB(25, 25, 15, 0),
@@ -99,7 +99,7 @@ Widget getListView() {
            decoration: new BoxDecoration(
             borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10)),
 
-             gradient:LinearGradient(colors: [Colors.white,Colors.pink[50],Colors.blue[200]])
+             gradient:LinearGradient(colors: [Colors.yellow,Colors.green[200],Colors.blue[300]])
            ),
            child:LinearPercentIndicator(
              animation:true,
@@ -115,6 +115,7 @@ Widget getListView() {
               ),
             )
          ),
+          
           ],
   
        )
@@ -127,10 +128,10 @@ Widget getListView() {
             decoration: new BoxDecoration(
                borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(10)),
 
-             gradient:LinearGradient(colors: [Colors.yellow,Colors.green[200],Colors.blue[200]])
+             gradient:LinearGradient(colors: [Colors.yellow,Colors.orange,Colors.red])
                ),
            child: ListTile(
-           leading: Icon(Icons.album,color:Colors.red),
+           leading: Icon(Icons.restaurant,color:Colors.red),
             contentPadding: EdgeInsets.fromLTRB(25,10 , 0, 0),
             title: GradientText("Plan your diet",
             gradient:LinearGradient(colors:[ Colors.deepPurple,Colors.deepOrange,Colors.pink]),
@@ -140,7 +141,7 @@ Widget getListView() {
           ),
           Container(
             decoration: new BoxDecoration(
-             gradient:LinearGradient(colors: [Colors.yellow,Colors.green[200],Colors.blue[200]]),
+             gradient:LinearGradient(colors: [Colors.yellow,Colors.orange,Colors.red]),
             borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10)),
 
                ),
@@ -171,7 +172,23 @@ Widget getListView() {
         ],
       ),
     ),
-      
+      Card(
+      child: Container(
+        decoration: new BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(10)),
+
+             gradient:LinearGradient(colors: [Colors.yellow,Colors.pink,Colors.purple])
+           ),
+       padding:EdgeInsets.all(10) ,
+       child: ListTile(
+        leading: Icon(Icons.data_usage ,size :30,color:Colors.pinkAccent),
+        title: GradientText("Points :",
+           gradient:LinearGradient(colors:[ Colors.yellow,Colors.orange,Colors.pink[600]]),
+            style:TextStyle(fontSize:20)),
+        //subtitle: Text("",style:TextStyle(color:Colors.black))
+      ),
+       ),
+      ),
 
 
     

@@ -10,6 +10,9 @@ class _LeaderboardState extends State<Leaderboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(     
+      appBar:AppBar(
+        centerTitle:true,
+         title: Text('LEADERBOARD',style: TextStyle(fontFamily:"Libre Baskerville", fontSize:20.0)) ,),
        body: Center(child: Text('leaderboard')),
     );
   }
