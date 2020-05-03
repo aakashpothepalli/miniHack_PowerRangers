@@ -35,6 +35,7 @@ class _ProductPageState extends State<ProductPage> {
                   background: Image.asset(
                     widget.imagePath,
                     fit: BoxFit.cover,
+                    
                   )),
             ),    
             
@@ -44,7 +45,7 @@ class _ProductPageState extends State<ProductPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             
-            FlatButton(child: Text('buy now'),onPressed: (){},),
+            FlatButton(child: Text('Points:\n\nBuy Now!'),onPressed: (){},),
           ],
         ),
       ),

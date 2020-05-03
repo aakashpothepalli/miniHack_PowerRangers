@@ -46,8 +46,9 @@ class User extends ChangeNotifier {
     // await prefs.clear();
     double count = prefs.getDouble('calorieCount');
     if(count==null){
-      waterCount =1.0;
-      setCalorieCount(1.0);
+      // waterCount =0.0;
+      calorieCount=0.0;
+      setCalorieCount(0.0);
     } 
     else{
       calorieCount = count;

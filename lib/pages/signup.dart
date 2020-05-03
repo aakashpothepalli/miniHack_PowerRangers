@@ -33,6 +33,9 @@ class _SignupState extends State<Signup> {
         key: _formKey,
               child: ListView(
           children: <Widget>[
+
+           Image.asset('assets/images/ProFitLogo.jpeg',height:200),
+            
             SizedBox(height: 20,),
 
                 Center(
