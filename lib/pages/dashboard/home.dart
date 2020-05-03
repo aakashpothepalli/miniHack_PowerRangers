@@ -11,7 +11,10 @@ import 'package:confetti/confetti.dart';
 
 import '../login.dart';
 class Home extends StatefulWidget {
-
+  int gender;
+  String name;
+  int age;
+  Home({this.name,this.age,this.gender});
 
   @override
   _HomeState createState() => _HomeState();
@@ -39,6 +42,7 @@ init(){
   setState(() {
     calorieCount= Provider.of<User>(context).calorieCount;
   });
+  
   // Provider.of<User>(context).getCalorieCount().then((count){
   //   setState(() {
   //     calorieCount =count;
@@ -65,8 +69,8 @@ Widget getListView() {
         title: GradientText("Calories : $calorieCount",
            gradient:LinearGradient(colors:[ Colors.deepPurple,Colors.deepOrange,Colors.pink]),
             style:TextStyle(fontSize:20)),
-        subtitle: Text("Calories Consumed for the Day")
-      ),
+        subtitle: Text(calorieCount<=1800?"Calories Consumed for the Day":"Calories Count Exceeded!!")
+        ),
        ),
       ),
       Card(
@@ -119,7 +123,7 @@ Widget getListView() {
                 backgroundColor: Colors.grey,
                 progressColor: Colors.blue,
                 center: Text(
-                  "$waterCount",
+                  "${waterCount*100}%",
                   style: new TextStyle(fontSize: 12.0),
               ),
             )

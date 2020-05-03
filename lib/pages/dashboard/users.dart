@@ -72,5 +72,14 @@ class User extends ChangeNotifier {
     setCalorieCount(calorieCount);
     notifyListeners();
   }
+  
+  getName(){
+    
+  }
+  getAge(){
 
+  }
+  getGender(){
+    
+  }
 }

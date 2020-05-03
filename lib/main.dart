@@ -14,6 +14,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+       debugShowCheckedModeBanner: false,
+
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -38,7 +40,7 @@ class MyApp extends StatelessWidget {
         accentColor: Colors.blueAccent,
       ),
 
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(),
     );
   }
 }
@@ -92,9 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
           Provider.of<User>(context).init();
 
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      
       body: Center(
         child: Login(),
       )

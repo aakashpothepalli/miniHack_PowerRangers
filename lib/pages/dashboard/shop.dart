@@ -116,7 +116,7 @@ class Shop extends StatelessWidget {
                 ),
                 child: FlatButton(
                   onPressed: (){
-                    Navigator.push(context, new MaterialPageRoute(builder: (context)=>ProductPage(imagePath: item,)));
+                    Navigator.push(context, new MaterialPageRoute(builder: (context)=>ProductPage(imagePath: item,itemName: 'Avacado',)));
                   },
                   child: Transform.translate(
                     offset: Offset(50, -50),
