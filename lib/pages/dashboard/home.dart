@@ -6,6 +6,8 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:msrit_power_rangers/pages/dashboard/menu.dart';
 import 'package:msrit_power_rangers/pages/dashboard/meal_plan.dart';
 import 'package:provider/provider.dart';
+import 'package:gradient_text/gradient_text.dart';
+
 import '../login.dart';
 class Home extends StatefulWidget {
 
@@ -44,10 +46,15 @@ Widget getListView() {
     children: <Widget>[
       Card(
       child: Container(
-       padding:EdgeInsets.all(25) ,
+        decoration: new BoxDecoration(
+             gradient:LinearGradient(colors: [Colors.yellow,Colors.orangeAccent,Colors.red])
+           ),
+       padding:EdgeInsets.all(10) ,
        child: ListTile(
         leading: Icon(Icons.favorite ,size :30,color:Colors.red),
-        title: Text('Calories : $calorieCount'),
+        title: GradientText("Calories : $calorieCount",
+           gradient:LinearGradient(colors:[ Colors.deepPurple,Colors.deepOrange,Colors.pink]),
+            style:TextStyle(fontSize:20)),
         subtitle: Text("Calories Consumed for the Day")
       ),
        ),
@@ -55,12 +62,20 @@ Widget getListView() {
       Card(
         child:Column(
           children: <Widget>[
-           ListTile(
-           contentPadding: EdgeInsets.fromLTRB(35, 25, 15, 15),
-           leading: Icon(Icons.invert_colors,size: 30,color:Colors.blue),
-           title: Text('Water '),
+           Container(
+             decoration: new BoxDecoration(
+             gradient:LinearGradient(colors: [Colors.white,Colors.pink[50],Colors.blue[200]])
+           ),
+           child:ListTile(
+           contentPadding: EdgeInsets.fromLTRB(25, 25, 15, 0),
+           leading: Icon(Icons.invert_colors,size: 30,color:Colors.indigo),
+           title: GradientText("Water",
+           gradient:LinearGradient(colors:[ Colors.deepPurple,Colors.deepOrange,Colors.pink]),
+            style:TextStyle(fontSize:20)),
+          
+
            trailing: IconButton (
-             icon:Icon(Icons.add_circle),
+             icon:Icon(Icons.add_circle,size:30,color: Colors.indigo),
              color:Colors.blue,
              onPressed: (){
                setState(() {
@@ -74,11 +89,17 @@ Widget getListView() {
              ),
         
         ),
+           ),
          Container(
            padding: EdgeInsets.all(25),
+           decoration: new BoxDecoration(
+             gradient:LinearGradient(colors: [Colors.white,Colors.pink[50],Colors.blue[200]])
+           ),
            child:LinearPercentIndicator(
+             animation:true,
+             animationDuration: 1000,
                 width: 140.0,
-                lineHeight: 14.0,
+                lineHeight: 20.0,
                 percent: waterCount,
                 backgroundColor: Colors.grey,
                 progressColor: Colors.blue,
@@ -96,13 +117,24 @@ Widget getListView() {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          const ListTile(
-            leading: Icon(Icons.album),
-            contentPadding: EdgeInsets.fromLTRB(35,10 , 0, 0),
-            title: Text('Plan your Diet'),
-            subtitle: Text('Choose your Menu for the day'),
+          Container(
+            decoration: new BoxDecoration(
+             gradient:LinearGradient(colors: [Colors.yellow,Colors.green[200],Colors.blue[200]])
+               ),
+           child: ListTile(
+           leading: Icon(Icons.album,color:Colors.red),
+            contentPadding: EdgeInsets.fromLTRB(25,10 , 0, 0),
+            title: GradientText("Plan your diet",
+            gradient:LinearGradient(colors:[ Colors.deepPurple,Colors.deepOrange,Colors.pink]),
+            style:TextStyle(fontSize:20)),
+            subtitle: Text('Choose your Menu for the day',style:TextStyle(color:Colors.black),),
           ),
-          ButtonBar(
+          ),
+          Container(
+            decoration: new BoxDecoration(
+             gradient:LinearGradient(colors: [Colors.yellow,Colors.green[200],Colors.blue[200]])
+               ),
+           child: ButtonBar(
             children: <Widget>[
               FlatButton(
                 child: const Text('Menu'),
@@ -124,6 +156,7 @@ Widget getListView() {
               ),
 
             ],
+          ),
           ),
         ],
       ),
