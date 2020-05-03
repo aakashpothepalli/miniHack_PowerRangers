@@ -6,6 +6,9 @@ import 'package:msrit_power_rangers/pages/dashboard/home.dart';
 import 'package:msrit_power_rangers/pages/dashboard/meal_plan.dart';
 import 'package:msrit_power_rangers/pages/easteregg.dart';
 
+
+ int counter = 0;
+
 class Dashboard extends StatefulWidget {
 
   @override
@@ -15,7 +18,6 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> {
 
-  int _counter = 0;
   
 
   final List<Widget> _children= [
@@ -38,11 +40,11 @@ class _DashboardState extends State<Dashboard> {
           //  alignment: Alignment.bottomCenter,
             onPressed: () {
               setState( () {
-                _counter ++ ;
-                if(_counter==5)
+                counter ++ ;
+                if(counter==5)
                 {
-                   Navigator.push(context, MaterialPageRoute(builder: (context) => EE()), );
-                   _counter=0;
+                   Navigator.push(context, MaterialPageRoute(builder: (context) => EasterBunny(),) );
+                   counter=0;
                   
                 }
               }
@@ -57,7 +59,13 @@ class _DashboardState extends State<Dashboard> {
           BottomNavigationBarItem(
             icon: IconButton(icon: Icon(Icons.accessibility),
           //  alignment: Alignment.bottomCenter,
+<<<<<<< HEAD
           ),
+=======
+            onPressed: () {
+
+            },),
+>>>>>>> fca74e1e2cd89df73cecc78634a1bb0e2f87a1d4
             title:Text('Tainer'),
             backgroundColor:Colors.blue
           ),
@@ -88,8 +96,51 @@ class _DashboardState extends State<Dashboard> {
           });
         }
       )
-  
+    
     );
   
   }
+}
+
+class EasterBunny extends StatelessWidget{
+  @override
+  Widget build(BuildContext context)
+  {
+    return Scaffold(
+
+      appBar: AppBar(backgroundColor: Colors.pink,
+         title: Text('Easter Bunny!!'),
+         centerTitle: true,),
+         body: Row(
+           mainAxisSize: MainAxisSize.max,
+          
+           mainAxisAlignment: MainAxisAlignment.center,
+           crossAxisAlignment:CrossAxisAlignment.end,
+           children: <Widget> [
+             Container(
+               height: 150,
+               width: 150,
+             decoration: new BoxDecoration(
+               
+               image: DecorationImage(
+                 image: new AssetImage('assets/images/bunny.jpg'),
+                fit:BoxFit.fill),
+
+             
+             shape: BoxShape.circle,
+             ),
+             ),
+             RaisedButton(
+               onPressed: (){
+                 Navigator.pop(context);
+                 counter=0;},
+                 child:Text('Back'),
+               )
+           ]
+             
+             ),
+    );
+  }
+
+
 }
