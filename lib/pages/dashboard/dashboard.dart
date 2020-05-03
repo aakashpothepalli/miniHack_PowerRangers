@@ -4,6 +4,7 @@ import 'package:msrit_power_rangers/pages/dashboard/shop.dart';
 import 'package:msrit_power_rangers/pages/dashboard/trainer.dart';
 import 'package:msrit_power_rangers/pages/dashboard/home.dart';
 import 'package:msrit_power_rangers/pages/dashboard/meal_plan.dart';
+import 'package:msrit_power_rangers/pages/easteregg.dart';
 
 class Dashboard extends StatefulWidget {
 
@@ -40,7 +41,7 @@ class _DashboardState extends State<Dashboard> {
                 _counter ++ ;
                 if(_counter==5)
                 {
-                   Navigator.push(context, MaterialPageRoute(builder: (context) => MealPlan()), );
+                   Navigator.push(context, MaterialPageRoute(builder: (context) => EE()), );
                    _counter=0;
                   
                 }
@@ -56,7 +57,7 @@ class _DashboardState extends State<Dashboard> {
           BottomNavigationBarItem(
             icon: IconButton(icon: Icon(Icons.accessibility),
           //  alignment: Alignment.bottomCenter,
-            onPressed: () {},),
+          ),
             title:Text('Tainer'),
             backgroundColor:Colors.blue
           ),
@@ -64,7 +65,8 @@ class _DashboardState extends State<Dashboard> {
           BottomNavigationBarItem(
             icon: IconButton(icon : Icon(Icons.add_shopping_cart),
            // alignment:Alignment.bottomCenter,
-            onPressed: () {}),
+            // onPressed: () {}
+            ),
             title:Text('Shop'),
             backgroundColor:Colors.blue
           
@@ -72,7 +74,8 @@ class _DashboardState extends State<Dashboard> {
           BottomNavigationBarItem(
             icon: IconButton(icon: Icon(Icons.group),
            // alignment: Alignment.bottomCenter,
-            onPressed: () {}),
+            // onPressed: () {}
+            ),
             title:Text('LeaderBoard'),
             backgroundColor:Colors.blue
           
