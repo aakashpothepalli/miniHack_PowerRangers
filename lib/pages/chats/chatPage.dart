@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:msrit_power_rangers/pages/chats/chatTile.dart';
+import 'package:msrit_power_rangers/pages/chats/messageTile.dart';
 class ChatPage extends StatefulWidget {
   String roomId;
   String profileName;
@@ -39,11 +41,13 @@ class _ChatPageState extends State<ChatPage> {
       builder: (context, snapshot) {
         if(snapshot.hasData){
           List<DocumentSnapshot> messagest = snapshot.data.documents;
-          List<ListTile> messages= new List();
+          List<MessageTile> messages= new List();
           
           for(int i=0;i<messagest.length;i++){
             messages.insert(0,
-              ListTile(title: Text(messagest[i].data['message']),));
+              MessageTile(
+                message: messagest[i].data['message'],
+                isSender:messagest[i].data['senderId']==widget.myUid?true:false  ,));
           }
           return Scaffold(
             appBar: AppBar(
