@@ -3,8 +3,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:msrit_power_rangers/pages/chats/chatTile.dart';
 class SendToTrainer extends StatefulWidget {
-  SendToTrainer({Key key}) : super(key: key);
-
+  String mealName;
+  double calories;
+  String imgurl;
+  SendToTrainer({this.mealName,this.calories,this.imgurl});
   @override
   _SendToTrainerState createState() => _SendToTrainerState();
 }
@@ -56,6 +58,9 @@ class _SendToTrainerState extends State<SendToTrainer> {
 
                   chats.add(
                     ChatTile(
+                      imgurl: widget.imgurl,
+                      mealName: widget.mealName,
+                      calories: widget.calories,
                       type: 1,
                       messageCount: 0,
                       myUid: this.user.uid,
@@ -69,14 +74,14 @@ class _SendToTrainerState extends State<SendToTrainer> {
             }
             
             return Scaffold(
-              appBar: AppBar(title: Text('Confirm Selection With Trainers'),),
-
+              appBar: AppBar(title: Text('Ask Trainers'),),
               body: ListView(
                 children: chats,
               ),);
           }
+
           else return Scaffold(
-            appBar: AppBar(title: Text('Confirm Selection With Trainers'),),
+            appBar: AppBar(title: Text('Ask Trainers'),),
             body: Center(
               child:CircularProgressIndicator() ,),
           );

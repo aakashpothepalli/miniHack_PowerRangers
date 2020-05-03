@@ -6,6 +6,7 @@ class ChatPage extends StatefulWidget {
   String roomId;
   String profileName;
   String myUid;
+
   ChatPage({this.roomId,this.profileName,this.myUid});
   
   @override
@@ -46,6 +47,11 @@ class _ChatPageState extends State<ChatPage> {
           for(int i=0;i<messagest.length;i++){
             messages.insert(0,
               MessageTile(
+                type:messagest[i].data['type'] ,
+                id: messagest[i].documentID,
+                roomId: widget.roomId,
+                imgurl: messagest[i].data['imgurl'],
+                rating:messagest[i].data['rating'],
                 message: messagest[i].data['message'],
                 isSender:messagest[i].data['senderId']==widget.myUid?true:false  ,));
           }

@@ -47,6 +47,8 @@ Widget getListView() {
       Card(
       child: Container(
         decoration: new BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(10)),
+
              gradient:LinearGradient(colors: [Colors.yellow,Colors.orangeAccent,Colors.red])
            ),
        padding:EdgeInsets.all(10) ,
@@ -63,8 +65,10 @@ Widget getListView() {
         child:Column(
           children: <Widget>[
            Container(
+            
              decoration: new BoxDecoration(
-             gradient:LinearGradient(colors: [Colors.white,Colors.pink[50],Colors.blue[200]])
+               borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(10)),
+              gradient:LinearGradient(colors: [Colors.white,Colors.pink[50],Colors.blue[200]])
            ),
            child:ListTile(
            contentPadding: EdgeInsets.fromLTRB(25, 25, 15, 0),
@@ -93,6 +97,8 @@ Widget getListView() {
          Container(
            padding: EdgeInsets.all(25),
            decoration: new BoxDecoration(
+            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10)),
+
              gradient:LinearGradient(colors: [Colors.white,Colors.pink[50],Colors.blue[200]])
            ),
            child:LinearPercentIndicator(
@@ -119,6 +125,8 @@ Widget getListView() {
         children: <Widget>[
           Container(
             decoration: new BoxDecoration(
+               borderRadius: BorderRadius.only(topLeft: Radius.circular(10),topRight: Radius.circular(10)),
+
              gradient:LinearGradient(colors: [Colors.yellow,Colors.green[200],Colors.blue[200]])
                ),
            child: ListTile(
@@ -132,7 +140,9 @@ Widget getListView() {
           ),
           Container(
             decoration: new BoxDecoration(
-             gradient:LinearGradient(colors: [Colors.yellow,Colors.green[200],Colors.blue[200]])
+             gradient:LinearGradient(colors: [Colors.yellow,Colors.green[200],Colors.blue[200]]),
+            borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10),bottomRight: Radius.circular(10)),
+
                ),
            child: ButtonBar(
             children: <Widget>[
